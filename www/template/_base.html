@@ -49,37 +49,14 @@
 
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-bell-o"></i>
-                                <span class="label label-warning">10</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">View all</a></li>
-                            </ul>
-                        </li>
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="/static/img/admin/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Alexander Pierce</span>
-                            </a>
-                        </li>
-                        <!-- Control Sidebar Toggle Button -->
                         <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+							<a href="#" title="收藏本页"><i class="fa fa-star-o"></i></a>
+                        </li>
+                        <li>
+							<a href="#" data-toggle="modal" data-target=".addition-modal" title="添加文档"><i class="fa fa-plus"></i></a>
+                        </li>
+                        <li>
+							<a href="#" data-toggle="modal" data-target=".addition-modal"><i class="fa fa-gears"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +65,7 @@
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
+            <section class="sidebar" id="main-menu">
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li class="treeview active">
@@ -96,9 +73,9 @@
                             <i class="fa fa-dashboard"></i> <span>首页</span>
                         </a>
                     </li>
-                    <li class="treeview">
-                        <a href="#" class="menu" data-href="http://docs.peewee-orm.com/en/latest/">
-                            <i class="fa fa-book"></i> <span>PEEWEE</span>
+                    <li class="treeview" v-for="o in li" v-on:click="active">
+                        <a class="menu" href="{{o.url}}" target="main-frame">
+                            <i class="fa fa-{{o.icon}}"></i> <span>{{o.name}}</span>
                         </a>
                     </li>
                     <li class="treeview">

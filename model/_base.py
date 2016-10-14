@@ -26,9 +26,11 @@ class Base(Model):
 
 def init_db():
     from model.user import User
+    from model.doc import Doc
 
     # 创建表
-    db.create_tables([User])
+    # db.create_tables([User])
+    db.create_tables([Doc])
 
 
 def drop_table():

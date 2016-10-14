@@ -7,6 +7,9 @@ from _base import AdminJsonBaseHandler
 from misc._route import route
 
 from model.user import User
+from model.doc import Doc
+
+from peewee import IntegrityError
 
 
 @route('/j/login')
@@ -53,3 +56,32 @@ class Pwd(AdminJsonBaseHandler):
             ret = dict(result=False, msg="全部为必填项不可为空！")
 
         self.finish(ret)
+
+
+@route('/j/doc')
+class DocHandler(AdminJsonBaseHandler):
+    def post(self):
+        d = dict()
+        result = False
+        for k, v in self.arguments.iteritems():
+            if not v:
+                d.update({k: '不可为空'})
+
+        if not d:
+            try:
+                Doc.create(**self.arguments)
+                result = True
+            except IntegrityError:
+                d['url'] = '该地址已经存在'
+
+        d.update(result=result)
+
+        self.finish(d)
+
+
+@route('/j/doc/list')
+class DocList(AdminJsonBaseHandler):
+    def get(self):
+        li = Doc.list()
+
+        self.finish(dict(li=[o.to_dict() for o in li]))

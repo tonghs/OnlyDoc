@@ -18,4 +18,4 @@ def add_admin():
 
 
 if __name__ == '__main__':
-    add_admin()
+    main()
