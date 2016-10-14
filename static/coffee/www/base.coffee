@@ -18,3 +18,5 @@ $(document).ready ->
     $('iframe#main-frame').load ->
         loader('hide')
 
+    $('.overlay').click ->
+        loader('hide')

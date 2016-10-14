@@ -9,3 +9,13 @@
 .form-group {
     margin-bottom: 20px;
 }
+
+
+.sidebar-menu li>a {
+    font-family: "Consolas","Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,sans-serif;
+    font-weight: bold;
+    padding: 8px 5px 8px 15px;
+}
+
+.sidebar-menu>li>a {
+}

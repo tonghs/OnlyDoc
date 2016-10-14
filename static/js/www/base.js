@@ -19,7 +19,10 @@
     $(window).resize(function() {
       return setFrameSize();
     });
-    return $('iframe#main-frame').load(function() {
+    $('iframe#main-frame').load(function() {
+      return loader('hide');
+    });
+    return $('.overlay').click(function() {
       return loader('hide');
     });
   });
