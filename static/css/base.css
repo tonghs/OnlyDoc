@@ -1,0 +1,167 @@
+body{
+    font-family: "PingFang SC", "Helvetica Neue", "Helvetica", 'Roboto Condensed', 'Microsoft Yahei', "Arial", "Verdana", "sans-serif";
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    border-radius: 4px;
+}
+
+body{
+        animation: fadein 0.9s ease-out;
+   -moz-animation: fadein 0.9s ease-out; /* Firefox */
+-webkit-animation: fadein 0.9s ease-out;  /* Safari 和 Chrome */
+     -o-animation: fadein 0.9s ease-out;   /* Opera */
+}
+
+a{
+        transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+-webkit-transition: all 0.3s ease-out;
+     -o-transition: all 0.3s ease-out;   
+}
+
+a:hover{
+        transition: all 0.3s ease-out;
+   -moz-transition: all 0.3s ease-out;
+-webkit-transition: all 0.3s ease-out;
+     -o-transition: all 0.3s ease-out;   
+}
+
+iframe {
+    width: 100%;
+    border: 0;
+    height: 100%;
+    position: fixed;
+}
+
+#msg {
+    display: none;
+}
+
+.fn-t-align-c{
+    text-align: center;
+}
+.fn-t-align-l{
+    text-align: left;
+}
+.fn-t-align-r{
+    text-align: right;
+}
+
+.fn-clear-f{
+    clear: both;
+}
+
+.box{
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    margin: 12px 0;
+    border: solid 1px #ddd;
+}
+
+.page-header {
+    margin: 25px 0 10px;
+}
+
+.fa {
+    line-height: 18px;
+}
+
+.key-vision {
+    color: #ff7200;
+}
+
+.key-vision-bg {
+    background-color: #ff7200;
+}
+
+
+.footer {
+    color: #fff;
+    line-height: 100px;
+    background-color: #eee;
+}
+
+.footer .copyright {
+    color: #aaa;
+    font-weight: bold;
+}
+
+.footer .content a{
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group.err input {
+    border: solid 1px red;
+}
+
+.form-group.err textarea{
+    border: solid 1px red;
+}
+
+
+.error-msg {
+    display: none;
+    float: left;
+    padding-top: 3px;
+}
+
+.err .error-msg {
+    padding-top: 3px;
+    float: left;
+    display: block;
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        color: #fff;
+        line-height: 30px;
+        padding: 15px;
+    }
+    .footer .content {
+        text-align: left !important;
+    }
+}
+
+/********* animation *******/
+@keyframes fadein {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein{ /* Firefox */ 
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein{ /* Safari 和 Chrome */ 
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein{ /* Opera */ 
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+/********* animation end *******/
+
