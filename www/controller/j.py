@@ -78,6 +78,17 @@ class DocHandler(AdminJsonBaseHandler):
 
         self.finish(d)
 
+    def delete(self):
+        try:
+            id = int(self.get_argument('id', 0))
+            doc = Doc.get(Doc.id == id)
+            doc.delete_instance()
+        except Exception as e:
+            raise e
+            pass
+
+        self.finish(dict(result=True))
+
 
 @route('/j/doc/list')
 class DocList(AdminJsonBaseHandler):

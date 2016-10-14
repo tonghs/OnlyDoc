@@ -3,12 +3,18 @@
 首页 - 
 </%block>
 <%block name="css">
+    <link rel="stylesheet" href="${STATIC.css('index.css')}">
 </%block>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <div class="box">
-        <iframe name="main-frame" id="main-frame" src="" width="100%" border="0"></iframe>
+        <div id="guid-wrapper">
+            <div id="guid">
+                点此添加新文章
+            </div>
+        </div>
+        <iframe name="main-frame" id="main-frame" src="" width="100%" border="0"> </iframe>
         <div class="overlay">
             <i class="fa fa-refresh fa-spin"></i>
         </div>
@@ -17,7 +23,7 @@
 <!-- /.content-wrapper -->
 
 <!-- addition modal -->
-<div class="modal fade addition-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<div class="modal fade addition-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -58,6 +64,52 @@
                             </div>
                         </form>
                     </div>
+                    <!--/.col (left) -->
+                </div>
+                <!-- /.row -->
+            </div> 
+        </div>
+    </div>
+</div>
+<!-- /addition modal -->
+
+<!-- mgr modal -->
+<div class="modal fade mgr-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title">管理文档</h4>
+            </div> 
+            <div class="modal-body">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+						<div class="box-body" id="doc-list">
+							<table class="table table-bordered">
+								<tr>
+									<th>ID</th>
+									<th>图标</th>
+									<th>名称</th>
+									<th>URL</th>
+									<th style="width: 135px;">操作</th>
+								</tr>
+								<tr v-for="o in li">
+									<td>{{o.id}}</td>
+									<td><i class="fa fa-{{o.icon}}"></i></td>
+									<td>{{o.name}}</td>
+									<td>{{o.url}}</td>
+									<td>
+										<div class="btn-group">
+											<button type="button" class="btn btn-xs btn-success" v-on:click="rm(o.id)" data-toggle="modal" data-target=".edition-modal">删除</button>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
                     <!--/.col (left) -->
                 </div>
                 <!-- /.row -->
