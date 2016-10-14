@@ -1,7 +1,9 @@
 $(document).ready ->
-    $('li.treeview').click ->
+    $('a.menu').click ->
         $('#main-frame').attr('src', $(this).data('href'))
         $('li.treeview').each ->
             $(this).removeClass('active')
 
-        $(this).addClass('active')
+        treeview = $(this).parents('li')
+        if treeview
+            treeview.addClass('active')
